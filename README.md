@@ -1,1 +1,1 @@
-# security-log-analyzer
+# Log Sec
