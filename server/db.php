@@ -7,6 +7,7 @@ $db->exec("
     CREATE TABLE IF NOT EXISTS logs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         agent_id TEXT NOT NULL,
+        username TEXT,
         timestamp TEXT NOT NULL,
         source TEXT NOT NULL,
         event_type TEXT NOT NULL,
