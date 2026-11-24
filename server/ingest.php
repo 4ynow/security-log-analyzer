@@ -21,12 +21,13 @@ if (!is_array($data) || !isset($data['agent_id']) || !isset($data['message'])) {
 }   
 
 $stmt = $db->prepare("
-    INSERT INTO logs (agent_id, timestamp, source, event_type, source_ip, message, severity)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO logs (agent_id, username, timestamp, source, event_type, source_ip, message, severity)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 ");
 
 $stmt->execute([
     $data['agent_id'],
+    $data['username']   ?? 'unknown', 
     $data['timestamp']  ?? date('c'),
     $data['source']     ?? 'unknown',
     $data['event_type'] ?? 'unknown',
