@@ -17,6 +17,7 @@ body {
     padding: 0;
     height: 100vh;
     width: 4.5rem;
+    flex-shrink: 0;
     background-color: #252a38;
     color: white;
     display: flex;
@@ -100,7 +101,8 @@ body {
     color: #ffffff;
 }
 
-.main-content {
+#app {
     flex: 1;
+    min-width: 0;
     background-color: #f9fafb;
 }
