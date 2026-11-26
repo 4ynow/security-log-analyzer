@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
 .sidebar {
     margin: 0;
     padding: 0;
@@ -13,7 +22,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
 }
 
 .logo {
@@ -21,8 +29,24 @@
     height: auto; 
     object-fit: contain; 
     margin-top: 1rem; 
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1rem; 
     cursor: pointer;
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 1rem;
 }
 
 .sidebar-item {
@@ -31,13 +55,17 @@
     align-items: center;
     justify-content: center;
     width: 85%;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     padding: 0.5rem 0;
     cursor: pointer;
     position: relative;
 }
 
-.sidebar-item::after {
+.sidebar-item.divider {
+    margin-bottom: 12px;
+}
+
+.sidebar-item.divider::after {
     content: "";
     position: absolute;
     bottom: -6px;
@@ -55,11 +83,24 @@
 
 .material-symbols-outlined {
     font-size: 1.5rem;
-    color: #e5e7eb;
+    color: #9ca3af;
 }
 
 .icon-text {
     font-size: 0.65rem;
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
     color: #9ca3af;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.sidebar-item:hover .material-symbols-outlined,
+.sidebar-item:hover .icon-text {
+    color: #ffffff;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #f9fafb;
 }
